@@ -11,6 +11,8 @@ export const metadata = {
     "Montaro Orders",
     "Montaro order history",
     "Track orders Montaro",
+    "Track orders Montaro Jackets",
+
   ],
   alternates: {
     canonical: "https://themontaro.vercel.app/orders",
