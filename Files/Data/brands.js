@@ -1,0 +1,16 @@
+export const brands = [
+  "Nike",
+  "The Indian Garage Co",
+  "ADIDAS",
+  "Blackberrys",
+  "UNDER ARMOUR",
+  "Mr Bowerbird",
+  "Monte Carlo",
+  "Puma",
+  "AMERICAN EAGLE OUTFITTERS",
+  "Jack & Jones",
+  "ASICS",
+  "U.S. Polo Assn. Denim Co.",
+  "U.S. Polo Assn.",
+  "Royal Enfield",
+];
