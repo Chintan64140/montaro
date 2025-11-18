@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 
 const OrderConfirmPage = () => {
 
-    // useEffect(()=>{
-    //     setTimeout(() => {
-    //         window.location.href = '/orders'
-    //     }, 6000);
-    // },[])
+    useEffect(()=>{
+        setTimeout(() => {
+            window.location.href = '/orders'
+        }, 6000);
+    },[])
 
   return (
     <>

@@ -22,7 +22,7 @@ const AddressPage = () => {
     address: "",
     addtype: "",
   });
-  console.log(orders, cart ,'poasdijsiojcsd');
+  console.log(orders, cart, "poasdijsiojcsd");
 
   const [submitted, setSubmitted] = useState(false);
   const allFilled = Object.values(addPayload).every((value) => value !== "");
@@ -340,6 +340,7 @@ const AddressPage = () => {
                   address: { ...addPayload },
                   orderDetails: { ...currentOrder },
                 });
+                window.location.href = '/order-confirmed'
                 clearCart();
                 clearOrders();
               } else {

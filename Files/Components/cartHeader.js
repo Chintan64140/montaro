@@ -10,10 +10,7 @@ const CartHeader = ({ green }) => {
       name: "Address",
       href: "/cart/address",
     },
-    {
-      name: "Payment",
-      href: "/cart/payment",
-    },
+   
   ];
 
   return (
