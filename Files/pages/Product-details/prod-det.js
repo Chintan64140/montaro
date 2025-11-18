@@ -107,6 +107,7 @@ export function ProductCardDetails({ product }) {
                   onClick={() => {
                     if (selectedSize) {
                       addToCart({ ...product, size: selectedSize });
+                      window.location.href = '/cart'
                     } else {
                       toast.error("Select Size", {
                         position: "bottom-center",
