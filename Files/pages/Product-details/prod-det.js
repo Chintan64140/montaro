@@ -82,7 +82,10 @@ export function ProductCardDetails({ product }) {
                 {/* View Bag Button */}
                 <div className="flex basis-3/5 items-center justify-evenly w-full">
                   <button
-                    onClick={() => {}}
+                    onClick={() => {
+                      window.location.href = '/cart'
+
+                    }}
                     className="inline-flex bg-[#221f20] items-center justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none bg-blackSS shadow text-white h-9 font-medium rounded-sm gap-2 disabled:bg-neutral-300 disabled:opacity-100 w-[90%] p-6"
                   >
                     <img
@@ -107,7 +110,6 @@ export function ProductCardDetails({ product }) {
                   onClick={() => {
                     if (selectedSize) {
                       addToCart({ ...product, size: selectedSize });
-                      window.location.href = '/cart'
                     } else {
                       toast.error("Select Size", {
                         position: "bottom-center",
