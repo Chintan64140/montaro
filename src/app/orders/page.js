@@ -42,7 +42,7 @@ const Orders = () => {
 
       {/* SEO H1 wrapper */}
       <div>
-        <h1 className="text-xl font-bold mb-4">Your Orders – The Montaro</h1>
+        {/* <h1 className="text-xl font-bold mb-4">Your Orders – The Montaro</h1> */}
         <Allorders />
       </div>
     </>
