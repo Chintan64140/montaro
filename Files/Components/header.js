@@ -18,10 +18,10 @@ const Header = () => {
   console.log(greet());
 
   return (
-    <div className="w-full p-2 bg-[#221f20]">
+    <div className="w-full p-2 bg-[#fff]">
       <img src="/assets/Logo/logo.png" className="h-12" />
       <div className="flex justify-between items-center pt-4">
-        <p className="text-[#cfcfcf] text-[14px]  momo">{greet()}</p>
+        <p className="text-[#000] text-[14px]  momo">{greet()}</p>
         <div className="flex items-center gap-5 md:gap-8">
           {/* <img
             alt="near-by-store"
@@ -40,14 +40,14 @@ const Header = () => {
             />
           </div> */}
 
-          <div className="relative">
+          {/* <div className="relative">
             <img
               alt="shopping-cart"
               src="https://www.shoppersstop.com/icons/bag_black.svg"
               className="size-6 cursor-pointer dark:invert invert"
               loading="eager"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -16,11 +16,18 @@ const slides = [
     subtitle: "Save big on trending fashion and gadgets.",
     img: "https://cmsimages.shoppersstop.com/PB_fest_main_kv_app_fa1b8eb0c4/PB_fest_main_kv_app_fa1b8eb0c4.png",
   },
+
+  {
+    id: 3,
+    title: "Exclusive Deals Everyday",
+    subtitle: "Save big on trending fashion and gadgets.",
+    img: "https://cmsimages.shoppersstop.com/Women_Indian_main_banner_app_de6650f5f6/Women_Indian_main_banner_app_de6650f5f6.png",
+  },
   {
     id: 3,
     title: "Shop Smart. Live Better.",
     subtitle: "Experience a seamless and fast shopping journey.",
-    img: "/assets/hero-section.png",
+    img: "https://cmsimages.shoppersstop.com/Main_KV_3feba984d6/Main_KV_3feba984d6.png",
   },
 ];
 
@@ -62,56 +69,31 @@ export default function HeroSlideCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[50vh] overflow-hidden">
-      <AnimatePresence custom={direction}>
-        <motion.div
-          key={slides[index].id}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="absolute inset-0"
-        >
-          <img
-            src={slides[index].img}
-            className="w-full h-full object-cover"
-          />
-          {/* <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-5">
-            <h1 className="text-white text-4xl md:text-6xl font-bold mb-3 drop-shadow-lg">
-              {slides[index].title}
-            </h1>
-            <p className="text-white/90 text-lg md:text-2xl mb-6">
-              {slides[index].subtitle}
-            </p>
-            <button className="px-6 py-3 bg-white text-black rounded-xl text-lg font-semibold shadow-xl hover:bg-gray-200 transition">
-              Shop Now
-            </button>
-          </div> */}
-        </motion.div>
-      </AnimatePresence>
+    <div className="relative">
+      <div className="relative w-full h-[50vh] overflow-hidden">
+        <AnimatePresence custom={direction}>
+          <motion.div
+            key={slides[index].id}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              duration: 0.8,
+              ease: "easeInOut",
+            }}
+            className="absolute inset-0"
+          >
+            <img
+              src={slides[index].img}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
 
-      {/* Arrows
-      <button
-        onClick={slidePrev}
-        className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/60 text-white p-3 rounded-full"
-      >
-        ◀
-      </button>
-
-      <button
-        onClick={slideNext}
-        className="absolute right-5 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/60 text-white p-3 rounded-full"
-      >
-        ▶
-      </button> */}
-
-      {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+        {/* Dots */}
+        {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
         {slides.map((_, i) => (
           <div
             key={i}
@@ -123,6 +105,22 @@ export default function HeroSlideCarousel() {
               ${index === i ? "bg-white" : "bg-white/40"}`}
           />
         ))}
+      </div> */}
+
+        <div className="absolute bottom-[-20px] z-10000 left-1/2 -translate-x-1/2 flex gap-0.5 ">
+          {slides.map((_, i) => (
+            <div
+              onClick={() => {
+                setIndex(i);
+              }}
+              key={i}
+              className={`w-2 h-2 rounded-full ${
+                i === index ? "bg-[#3a3a45]" : "bg-[#909199]"
+              } ${i === index ? "w-5" : "w-2"}`}
+              style={{ transition: "0.5s" }}
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,13 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const Carousel = ({ images, animate = true, rating }) => {
+const Carousel = ({
+  images,
+  animate = true,
+  rating,
+  styles,
+  dotsDistance = "20px",
+}) => {
   const pathname = usePathname();
   // console.log(pathname, "sdiuohsdhuchid");
 
@@ -38,10 +44,12 @@ const Carousel = ({ images, animate = true, rating }) => {
             <img
               key={i}
               src={img}
-              className="w-full h-[60vh] object-cover flex-shrink-0 "
+              className="w-full object-cover flex-shrink-0 "
               style={{
                 borderBottomLeftRadius: "25px",
                 borderBottomRightRadius: "25px",
+                height: "60vh",
+                ...styles,
               }}
               alt="slide"
             />
@@ -51,40 +59,48 @@ const Carousel = ({ images, animate = true, rating }) => {
         {/* Dots */}
       </div>
 
-      <div className="absolute bottom-[-20px] z-10000 left-1/2 -translate-x-1/2 flex gap-0.5 ">
+      <div
+        className="absolute bottom-[-20px] z-10000 left-1/2 -translate-x-1/2 flex gap-0.5 "
+        style={{
+          bottom:  dotsDistance,
+        }}
+      >
         {images.map((_, i) => (
           <div
             onClick={() => {
               setIndex(i);
             }}
             key={i}
-            className={`w-2 h-2 rounded-full ${
+            className={`w-1 h-1 rounded-full ${
               i === index ? "bg-[#3a3a45]" : "bg-[#909199]"
-            } ${i === index ? "w-5" : "w-2"}`}
+            } ${i === index ? "w-4" : "w-1"}`}
             style={{ transition: "0.5s" }}
           ></div>
         ))}
       </div>
-      {rating &&
-      <div
-        style={{
-          background:
-            "linear-gradient(1.5708rad, rgb(243, 240, 255), rgb(243, 240, 255))",
-        }}
-        className="absolute bottom-3 right-3 p-2 py-1 rounded-[10px]  bg-[#fff] flex flex-col"
-      >
-        <p className="text-[12px] text-center font-[600] momo">Brand Rating</p>
-        <div className="flex justify-center items-center">
-          <p className="text-[12px] text-center font-[600] momo">{rating}</p>
-          <span
-            className="bg-contain h-[9px] w-[9px] ml-[4px] "
-            style={{
-              backgroundImage:
-                "url(https://constant.myntassets.com/pwa/assets/img/2bce8a2b-e1d5-465a-8980-62f3d778377c1548353615799-Fill-90-Copy-7.png)",
-            }}
-          ></span>
+      {rating && (
+        <div
+          style={{
+            background:
+              "linear-gradient(1.5708rad, rgb(243, 240, 255), rgb(243, 240, 255))",
+          }}
+          className="absolute bottom-3 right-3 p-2 py-1 rounded-[10px]  bg-[#fff] flex flex-col"
+        >
+          <p className="text-[12px] text-center font-[600] momo">
+            Brand Rating
+          </p>
+          <div className="flex justify-center items-center">
+            <p className="text-[12px] text-center font-[600] momo">{rating}</p>
+            <span
+              className="bg-contain h-[9px] w-[9px] ml-[4px] "
+              style={{
+                backgroundImage:
+                  "url(https://constant.myntassets.com/pwa/assets/img/2bce8a2b-e1d5-465a-8980-62f3d778377c1548353615799-Fill-90-Copy-7.png)",
+              }}
+            ></span>
+          </div>
         </div>
-      </div>}
+      )}
     </div>
   );
 };
